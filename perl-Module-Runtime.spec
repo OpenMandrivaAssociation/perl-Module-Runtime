@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Release:    %mkrel 2
 
 Summary:    Runtime module handling
 License:    GPL+ or Artistic
@@ -21,6 +21,7 @@ BuildRequires: perl(parent)
 BuildRequires: perl(strict)
 BuildRequires: perl(warnings)
 BuildRequires: perl(Module::Build::Compat)
+BuildRequires: perl(Params::Classify)
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
