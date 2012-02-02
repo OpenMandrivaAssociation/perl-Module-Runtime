@@ -1,15 +1,15 @@
 %define upstream_name    Module-Runtime
-%define upstream_version 0.007
+%define upstream_version 0.011
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 3
+Release:    1
 
 Summary:    Runtime module handling
 License:    GPL+ or Artistic
 Group:      Development/Perl
 Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Module/%{upstream_name}-%{upstream_version}.tar.lzma
+Source0:    http://www.cpan.org/modules/by-module/Module/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires: perl(Carp)
 BuildRequires: perl(Exporter)
@@ -23,7 +23,6 @@ BuildRequires: perl(warnings)
 BuildRequires: perl(Module::Build::Compat)
 BuildRequires: perl(Params::Classify)
 BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 The functions exported by this module deal with runtime handling of Perl
@@ -52,5 +51,3 @@ rm -rf %buildroot
 %doc Changes README
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
-
