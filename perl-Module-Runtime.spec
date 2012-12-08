@@ -1,5 +1,5 @@
 %define upstream_name    Module-Runtime
-%define upstream_version 0.011
+%define upstream_version 0.013
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -32,22 +32,33 @@ modules, which are normally handled at compile time.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+%__perl Makefile.PL INSTALLDIRS=vendor
 
-%{make}
+%make
 
 %check
-%{make} test
+%make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc Changes README
 %{_mandir}/man3/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
+
+
+%changelog
+* Thu Feb 02 2012 Bernhard Rosenkraenzer <bero@bero.eu> 0.11.0-1
++ Revision: 770666
+- Build for perl 5.14.x, Update to 0.011
+
+* Sat Apr 16 2011 Funda Wang <fwang@mandriva.org> 0.7.0-3
++ Revision: 653600
+- rebuild for updated spec-helper
+
+* Sat Aug 28 2010 Shlomi Fish <shlomif@mandriva.org> 0.7.0-2mdv2011.0
++ Revision: 573834
+- Bump the release number and add Params::Classify to the requires
+- import perl-Module-Runtime
+
