@@ -22,6 +22,7 @@ BuildRequires:	perl(strict)
 BuildRequires:	perl(warnings)
 BuildRequires:	perl(Module::Build::Compat)
 BuildRequires:	perl(Params::Classify)
+BuildRequires:	perl(JSON::PP)
 
 %description
 The functions exported by this module deal with runtime handling of Perl
@@ -44,5 +45,4 @@ modules, which are normally handled at compile time.
 %doc Changes README
 %{perl_vendorlib}/*
 %{_mandir}/man3/*
-
 
