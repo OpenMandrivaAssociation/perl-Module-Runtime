@@ -1,11 +1,11 @@
 %define modname	Module-Runtime
-%define modver 0.014
+%define modver 0.016
 
 Summary:	Runtime module handling
 
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	9
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
