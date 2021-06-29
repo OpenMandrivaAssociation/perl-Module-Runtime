@@ -1,11 +1,10 @@
-%define modname	Module-Runtime
+%define modname Module-Runtime
 %define modver 0.016
 
 Summary:	Runtime module handling
-
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	5
+Release:	6
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://metacpan.org/pod/Module::Runtime
@@ -29,20 +28,19 @@ The functions exported by this module deal with runtime handling of Perl
 modules, which are normally handled at compile time.
 
 %prep
-%setup -qn %{modname}-%{modver}
+%autosetup -p1 -n %{modname}-%{modver}
 
 %build
-%__perl Makefile.PL INSTALLDIRS=vendor
-%make
+perl Makefile.PL INSTALLDIRS=vendor
+%make_build
 
 %check
 %make test
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc Changes README
 %{perl_vendorlib}/*
-%{_mandir}/man3/*
-
+%doc %{_mandir}/man3/*
