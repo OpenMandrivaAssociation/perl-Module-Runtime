@@ -10,6 +10,7 @@ Group:		Development/Perl
 Url:		https://metacpan.org/pod/Module::Runtime
 Source0:	http://www.cpan.org/modules/by-module/Module/%{modname}-%{modver}.tar.gz
 BuildArch:	noarch
+BuildRequires:	make
 BuildRequires:	perl(Carp)
 BuildRequires:	perl(Exporter)
 BuildRequires:	perl(Math::Complex)
