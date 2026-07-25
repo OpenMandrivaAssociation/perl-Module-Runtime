@@ -1,14 +1,14 @@
 %define modname Module-Runtime
-%define modver 0.016
+%define modver 0.018
 
 Summary:	Runtime module handling
 Name:		perl-%{modname}
-Version:	%perl_convert_version %{modver}
-Release:	10
+Version:	%{modver}
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		https://metacpan.org/pod/Module::Runtime
-Source0:	http://www.cpan.org/modules/by-module/Module/%{modname}-%{modver}.tar.gz
+Url:		https://github.com/haarg/Module-Runtime
+Source0:	https://cpan.metacpan.org/authors/id/H/HA/HAARG/Module-Runtime-%{modver}.tar.gz
 BuildArch:	noarch
 BuildRequires:	make
 BuildRequires:	perl(Carp)
